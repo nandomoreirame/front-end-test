@@ -1,5 +1,5 @@
 import { UserInterface } from './users.interface';
-import { PropertieInterface } from './properties.interface';
+import { PropertyInterface } from './properties.interface';
 
 export interface UsersStateInterface {
   isLogged: boolean;
@@ -8,8 +8,8 @@ export interface UsersStateInterface {
 }
 
 export interface PropertiesStateInterface {
-  propertie: PropertieInterface;
-  list: PropertieInterface[];
+  propertie: PropertyInterface;
+  list: PropertyInterface[];
 }
 
 export interface StateInterface {

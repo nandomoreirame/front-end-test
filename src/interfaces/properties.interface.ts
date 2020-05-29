@@ -3,7 +3,7 @@ export interface ProductivityInterface {
   value?: number;
 }
 
-export interface PropertieInterface {
+export interface PropertyInterface {
   id?: number;
   name?: string;
   cropType?: string;
