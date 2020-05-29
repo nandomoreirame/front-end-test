@@ -1,6 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography, CardActions, Button } from '@material-ui/core';
+import {
+  Card,
+  CardContent,
+  Typography,
+  CardActions,
+  Button,
+  Popover,
+  Box,
+} from '@material-ui/core';
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import { PropertyInterface } from 'src/interfaces';
 
 const useStyles = makeStyles({
@@ -44,9 +53,35 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property }: Property
           )}
         </CardContent>
         <CardActions>
-          <Button size="small" className={classes.button} variant="text">
-            Mais detalhes
-          </Button>
+          <PopupState variant="popover" popupId="demo-popup-popover">
+            {(popupState) => (
+              <div>
+                <Button
+                  size="small"
+                  className={classes.button}
+                  variant="text"
+                  {...bindTrigger(popupState)}
+                >
+                  Mais detalhes
+                </Button>
+                <Popover
+                  {...bindPopover(popupState)}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                  }}
+                >
+                  <Box p={2}>
+                    <Typography>Produtividade:</Typography>
+                  </Box>
+                </Popover>
+              </div>
+            )}
+          </PopupState>
         </CardActions>
       </Card>
     </>

@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, Avatar, Typography, Container, CardContent, Card } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import LoginForm from '../components/LoginForm';
+import Footer from 'src/components/Footer';
 
 interface LoginPageProps {}
 
@@ -39,6 +40,7 @@ export const LoginPage: React.FC<LoginPageProps> = (props: LoginPageProps) => {
             <LoginForm />
           </CardContent>
         </Card>
+        <Footer />
       </Container>
     </>
   );
